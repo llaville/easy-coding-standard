@@ -348,7 +348,20 @@ final class ECSConfigBuilder
         bool $phpCsFixer = false,
         bool $phpCsFixerRisky = false,
         bool $symfony = false,
-        bool $symfonyRisky = false
+        bool $symfonyRisky = false,
+        bool $perCS30 = false,
+        bool $perCS30Risky = false,
+        bool $php81MigrationRisky = false,
+        bool $php82MigrationRisky = false,
+        bool $php83MigrationRisky = false,
+        bool $php84MigrationRisky = false,
+        bool $php85Migration = false,
+        bool $php85MigrationRisky = false,
+        bool $auto = false,
+        bool $autoRisky = false,
+        bool $autoPHPMigration = false,
+        bool $autoPHPMigrationRisky = false,
+        bool $autoPHPUnitMigrationRisky = false,
     ): self {
         if ($doctrineAnnotation) {
             $this->dynamicSets[] = '@DoctrineAnnotation';
@@ -376,6 +389,14 @@ final class ECSConfigBuilder
 
         if ($perCS20Risky) {
             $this->dynamicSets[] = '@PER-CS2x0:risky';
+        }
+
+        if ($perCS30) {
+            $this->dynamicSets[] = '@PER-CS3x0';
+        }
+
+        if ($perCS30Risky) {
+            $this->dynamicSets[] = '@PER-CS3x0:risky';
         }
 
         if ($perCSRisky) {
@@ -434,16 +455,40 @@ final class ECSConfigBuilder
             $this->dynamicSets[] = '@PHP8x1Migration';
         }
 
+        if ($php81MigrationRisky) {
+            $this->dynamicSets[] = '@PHP8x1Migration:risky';
+        }
+
         if ($php82Migration) {
             $this->dynamicSets[] = '@PHP8x2Migration';
+        }
+
+        if ($php82MigrationRisky) {
+            $this->dynamicSets[] = '@PHP8x2Migration:risky';
         }
 
         if ($php83Migration) {
             $this->dynamicSets[] = '@PHP8x3Migration';
         }
 
+        if ($php83MigrationRisky) {
+            $this->dynamicSets[] = '@PHP8x3Migration:risky';
+        }
+
         if ($php84Migration) {
             $this->dynamicSets[] = '@PHP8x4Migration';
+        }
+
+        if ($php84MigrationRisky) {
+            $this->dynamicSets[] = '@PHP8x4Migration:risky';
+        }
+
+        if ($php85Migration) {
+            $this->dynamicSets[] = '@PHP8x5Migration';
+        }
+
+        if ($php85MigrationRisky) {
+            $this->dynamicSets[] = '@PHP8x5Migration:risky';
         }
 
         if ($phpunit30MigrationRisky) {
@@ -536,6 +581,26 @@ final class ECSConfigBuilder
 
         if ($symfonyRisky) {
             $this->dynamicSets[] = '@Symfony:risky';
+        }
+
+        if ($auto) {
+            $this->dynamicSets[] = '@auto';
+        }
+
+        if ($autoRisky) {
+            $this->dynamicSets[] = '@auto:risky';
+        }
+
+        if ($autoPHPMigration) {
+            $this->dynamicSets[] = '@autoPHPMigration';
+        }
+
+        if ($autoPHPMigrationRisky) {
+            $this->dynamicSets[] = '@autoPHPMigration:risky';
+        }
+
+        if ($autoPHPUnitMigrationRisky) {
+            $this->dynamicSets[] = '@autoPHPUnitMigration:risky';
         }
 
         return $this;

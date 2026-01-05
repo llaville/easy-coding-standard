@@ -17,7 +17,7 @@
         "composer/xdebug-handler": "^3.0.5",
         "friendsofphp/php-cs-fixer": "^3.92.4",
         "illuminate/container": "12.39",
-        "nette/utils": "4.0.*",
+        "nette/utils": "4.0.2",
         "sebastian/diff": "^6.0.2",
         "squizlabs/php_codesniffer": "^4.0.1",
         "symfony/console": "^6.4.24",
